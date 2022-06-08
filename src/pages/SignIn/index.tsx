@@ -20,9 +20,13 @@ import {
   TextFooterSignUp,
 } from './styles';
 
-export default function SignIn(props) {
+export default function SignIn({ navigation }) {
   function handleEmailScreen() {
-    props.navigation.navigate('Login');
+    navigation.navigate('Login');
+  }
+
+  function handleNewScreen() {
+    navigation.navigate('NewScreen');
   }
 
   return (
@@ -39,7 +43,7 @@ export default function SignIn(props) {
             <TextButton>Email</TextButton>
           </ButtonSignIn>
           <View style={{ width: 15 }} />
-          <ButtonSignIn>
+          <ButtonSignIn onPress={handleNewScreen}>
             <TextButton>Celular</TextButton>
           </ButtonSignIn>
         </ButtonsContainer>
@@ -51,8 +55,3 @@ export default function SignIn(props) {
     </Container>
   );
 }
-
-SignIn.navigationOptions = {
-  header: null,
-  title: 'Logar',
-};

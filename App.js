@@ -1,12 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import SignIn from './src/pages/SignIn';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Route from './src/navigation';
 
 export default function App() {
   return (
     <>
-      <StatusBar style="auto" />
-      <SignIn />
+      <NavigationContainer>
+        <Route />
+      </NavigationContainer>
     </>
   );
 }
